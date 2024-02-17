@@ -39,6 +39,10 @@ app.get("/users/:userId", async (req, res) => {
   }
 });
 
+app.get("/", async (req, res) => {
+  res.send({ msg: "Welcome to Home" });
+});
+
 app.post("/users/register", (req, res) => {
   bcrypt.hash(req.body.password, 5, async (err, hashedPWD) => {
     if (err) {
